@@ -91,3 +91,28 @@ input {
     color: #fff;
     white-space: nowrap;
 }
+
+.container-xl img {
+  width: 100%;
+}
+
+.aboutme {
+  border: 1px solid #e1e4e8;
+  border-radius: 3px;
+}
+
+.status {
+  padding: 8px;
+}
+
+.octicon-smiley {
+  fill: #666666;
+}
+.octicon-smily:hover {
+  fill: #0059DE;
+}
+
+.status > span {
+  color: #586069;
+  font-size: 12px;
+}

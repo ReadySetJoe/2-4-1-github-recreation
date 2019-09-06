@@ -27,12 +27,21 @@ header {
   width : 100%;
 }
 
-.header-item {
-  margin-right: 16px;
+header a {
+  font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    margin-right: 8px;
 }
 
-.search > img {
-  margin-right: 8px;
+.header-item {
+  margin-right: 16px;
+  align-items: center;
+  display: flex;
+}
+
+.background-filler {
+  background: #fff;
 }
 
 .search {
@@ -42,9 +51,13 @@ header {
   font-weight: 400;
   color: #fff;
   vertical-align: middle;
-  background-color: hsla(0,0%,100%,.125);
+  background:#3F4448;
   border: 0;
   box-shadow: none;}
+
+.search > img {
+  margin-right: 8px;
+}
 
 .search > input {
   padding-top: 0;

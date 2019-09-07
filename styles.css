@@ -117,6 +117,44 @@ input {
   font-size: 12px;
 }
 
-.names {
+.names > h1 > span {
+  font-size: 26px;
+  font-weight: 600;
+  display: block;
 
+}
+.names > h1 > span:last-child {
+  font-size: 20px;
+  color: #666;
+  font-weight: 300;
+
+}
+
+.edit-profile {
+  width: 100%;
+}
+
+span {
+  font-size: 14px;
+}
+
+.bio {
+  color: #24292e;
+}
+.bio > a {
+  color: #24292e;
+  font-weight: 600;
+}
+
+.history {
+  font-size: 14px;
+}
+
+.orgs > h2 {
+  font-size: 16px;
+}
+
+.orgs > a > img {
+  height: 35px;
+  width: 35px;
 }

@@ -18,6 +18,7 @@ a:hover {
 }
 
 /* ***********HEADER*********** */
+
 header {
   display: flex;
   background: #23292E;
@@ -92,10 +93,18 @@ input {
     white-space: nowrap;
 }
 
+
+/* **************Main Content********* */
+
 .container-xl img {
   width: 100%;
 }
 
+.container-xl {
+  max-width: 1280px;
+
+}
+/* ****************Left Column********** */
 .aboutme {
   border: 1px solid #e1e4e8;
   border-radius: 3px;
@@ -157,4 +166,37 @@ span {
 .orgs > a > img {
   height: 35px;
   width: 35px;
+}
+
+/* **********Repo-Content******** */
+
+.tabs {
+  border-bottom: 1px solid #d1d5da;
+  height: 56px;
+}
+
+.tabs > a {
+  padding: 16px 8px;
+  margin-right: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #586069;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+#selected {
+  border-bottom-color: #e36209;
+  font-weight: 600;
+}
+
+.tabs > a > span {
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: #586069;
+  background-color: rgba(27,31,35,.08);
+  border-radius: 20px;
 }

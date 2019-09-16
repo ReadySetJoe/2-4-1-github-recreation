@@ -7,10 +7,6 @@ $(document).ready(function() {
   const CLIENT_ID = 'caabff772900094727f9';
   const CLIENT_SECRET = '525233b30edeebe9c66c0e01295362f715285af3';
 
-  let success = (resp) => {
-    console.log(resp.data);
-  };
-
   let requestRepos = $.ajax({
     method: "GET",
     url: `${BASE_URL}/${USER}/repos`,
@@ -21,6 +17,16 @@ $(document).ready(function() {
     }
   });
 
+  let success = (resp) => {
+    console.log(resp.data);
+    let context = {repos: resp.data};
+    let source = $('#repo-template').html();
+    let template = Handlebars.compile(source);
+    let repoListHtml = template(context);
+
+    $('.repo-list').html(repoListHtml);  };
+
+
   let requestUser = $.ajax({
     method: "GET",
     url: `${BASE_URL}/${USER}`,
@@ -29,15 +35,10 @@ $(document).ready(function() {
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET
     }
+
   });
 
-  // request.done(success);
+  requestRepos.done(success);
 
-  let source = $('#repo-template').html();
-
-  let template = Handlebars.compile(source);
-
-  let context = requestRepos;
-  let html = template(context);
 
 });

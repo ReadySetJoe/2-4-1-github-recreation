@@ -125,15 +125,16 @@
 
         </form>
       </div>
+      <script id="repo-template" type="text/x-handlebars-template">
+        {{#each repos}}
+        <h3><a>The directory name is : {{name}}</a></h3>
+        <div class="code-lang">{{code-lang-color}}{{code-lang-string}}</div>
+        <span class="last-update">Updated <datetime>{{updated-at}}</datetime></span>
+        <button class="star">Star</button>
+        <div class="activity-line"></div>
+        {{/each}}
+      </script>
       <div class="repo-list">
-        <script id="repo-template" type="text/x-handlebars-template">
-          {{#each repos}}
-          <h3><a>{{name}}</a></h3>
-          <div class="code-lang">{{code-lang-color}}{{code-lang-string}}</div>
-          <span class="last-update">Updated <datetime>{{updated-at}}</datetime></span>
-          <button class="star">Star</button>
-          <div class="activity-line"></div>
-        </script>
 
       </div>
     </div>
@@ -142,7 +143,6 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.2.0/handlebars.min.js" charset="utf-8"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@4.2.0/lib/index.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="main.js" charset="utf-8"></script>
 </body>

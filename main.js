@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // console.log(this);
 
   const BASE_URL = 'https://api.github.com/users';
   const USER = 'readysetjoe';
@@ -17,14 +16,37 @@ $(document).ready(function() {
     }
   });
 
-  let success = (resp) => {
-    console.log(resp.data);
+  let successRepos = (resp) => {
+    let reposData = resp.data;
+
+    console.log(reposData);
+
+    reposData.sort(function(a,b){
+      return new Date(b.updated_at) - new Date(a.updated_at);
+    });
+
+    reposData.map( x => x.updated_ago = moment(x.updated_at).fromNow());
+
+    // reposData.map( x => x.relative_datetime_Mill = x.relative_datetime.getMilliseconds())
+    // reposData.map( x => x.relative_datetime_Seco = x.relative_datetime.getSeconds())
+    // reposData.map( x => x.relative_datetime_Minu = x.relative_datetime.getMinutes())
+    // reposData.map( x => x.relative_datetime_Hour = x.relative_datetime.getHours())
+    // reposData.map( x => x.relative_datetime_Days = x.relative_datetime.getDate())
+    // reposData.map( x => x.relative_datetime_Mont = x.relative_datetime.getMonth())
+
+
+    console.log(reposData);
+
+
+
+
     let context = {repos: resp.data};
     let source = $('#repo-template').html();
     let template = Handlebars.compile(source);
     let repoListHtml = template(context);
 
-    $('.repo-list').html(repoListHtml);  };
+    $('.repo-list').html(repoListHtml);
+  };
 
 
   let requestUser = $.ajax({
@@ -38,7 +60,16 @@ $(document).ready(function() {
 
   });
 
-  requestRepos.done(success);
+  requestRepos.done(successRepos);
+
 
 
 });
+
+var date_sort_desc = function (date1, date2) {
+  // This is a comparison function that will result in dates being sorted in
+  // DESCENDING order.
+  if (date1 > date2) return -1;
+  if (date1 < date2) return 1;
+  return 0;
+};
